@@ -6,12 +6,15 @@
 package reservation.entity;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,7 +27,14 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    //////////////////
+    @OneToMany(mappedBy = "client")
+    private Set<Reservation> reservations =new HashSet<>();
+    /////////////////
     
+
+    public Client() {
+    }
     @Column(nullable = false, length = 32)
     private String nom;
     

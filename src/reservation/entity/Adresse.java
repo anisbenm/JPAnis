@@ -17,5 +17,16 @@ public class Adresse {
     private String localite;
     private String pays;
     private long codePostal;
+
+    public Adresse(String rue, String localite, String pays, long codePostal) {
+        this.rue = rue;
+        this.localite = localite;
+        this.pays = pays;
+        this.codePostal = codePostal;
+    }
+
+    public Adresse() {
+    }
+    
     
 }
